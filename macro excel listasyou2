@@ -1,0 +1,11 @@
+Sub main()
+Dim ran As Range
+
+Set ran = Application.Selection
+Rem '& "frameborder=""0"" allow=""accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"" allowfullscreen></iframe>"
+For Each link In ran
+'<iframe width="764" height="573" src="https://www.youtube.com/embed/s_8KR-n2fBQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+link.Offset(0, 1).Value = "<iframe width=""764"" height=""573"" src=""https://www.youtube.com/embed/" & link.Value & """ frameborder=""0"" allow=""accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"" allowfullscreen></iframe><br><br>"
+Next link
+
+End Sub
